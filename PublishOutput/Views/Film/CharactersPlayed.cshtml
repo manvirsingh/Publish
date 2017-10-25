@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PureIPTest.ViewModel.CharactersPlayed>
+@{
+    ViewBag.Title = "CharactersPlayed";}
+
+<h2>Characters Played</h2>
+<table class="table">
+     <tr>
+        <td>
+            <ul class="list-group">
+                @foreach (var model in Model)
+                {
+                    <li class="list-group-item">
+                        @Html.Encode(model.Actor)
+                        <ul class="list-group">
+
+                            @foreach (var name in model.Name)
+                            {
+                            <li class="list-group-item">@Html.Encode(name)</li>
+                            } 
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </td>
+    </tr>  
+</table>
